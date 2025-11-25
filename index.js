@@ -15,10 +15,14 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // Change this to your deployed frontend URL when deploying frontend
-    credentials: true, // IMPORTANT for cookies
+    origin: [
+      "https://bp4lm8pt-5173.inc1.devtunnels.ms",
+      "https://bp4lm8pt-5000.inc1.devtunnels.ms"
+    ],
+    credentials: true,
   })
 );
 

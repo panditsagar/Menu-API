@@ -28,16 +28,15 @@ export const login = async (req, res) => {
     return res
       .status(200)
       .cookie("token", token, {
-        maxAge: 7 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        sameSite: "strict",
-    secure: true, // REQUIRED for HTTPS on Render
-  })
-  .json({
-    message: "Welcome Back",
-    success: true,
-  });
-
+        secure: true, // required because devtunnel = HTTPS
+        sameSite: "none", // required for cross-domain cookie
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+      })
+      .json({
+        message: "Welcome Back",
+        success: true,
+      });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal server error" });
@@ -66,8 +65,9 @@ export const checkAuth = async (req, res) => {
 export const logout = (req, res) => {
   res
     .clearCookie("token", {
-      httpOnly: true,
-      sameSite: "strict",
+       httpOnly: true,
+  secure: true,
+  sameSite: "none",
     })
     .status(200)
     .json({
