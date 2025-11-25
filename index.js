@@ -19,8 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [
-      "https://bp4lm8pt-5173.inc1.devtunnels.ms",
-      "https://bp4lm8pt-5000.inc1.devtunnels.ms"
+      "http://localhost:5173",
+      "https://menu-api-c8k7.onrender.com"
     ],
     credentials: true,
   })
