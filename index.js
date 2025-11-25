@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
+      "https://menu-project-lac-nine.vercel.app",
       "https://menu-api-c8k7.onrender.com"
     ],
     credentials: true,
