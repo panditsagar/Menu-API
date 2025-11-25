@@ -12,7 +12,7 @@ import { singleUpload } from "../utils/multer.js";
 const router = express.Router();
 
 router.route("/post").post(isAuthenticated, singleUpload, postItems);
-router.route("/get/:id").get(isAuthenticated, getItemsByCategory);
+router.route("/get/:id").get( getItemsByCategory);
 router.route("/delete/:id").delete(isAuthenticated, deleteItem);
 router.route("/update/:id").put(isAuthenticated, singleUpload, updateItem);
 export default router;

@@ -26,6 +26,16 @@ app.use(
   })
 );
 
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+      
+//     ],
+//     credentials: true,
+//   })
+// );
+
 
 //Api's
 app.use("/api/v1/categories", categoriesRoutes);

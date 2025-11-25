@@ -10,7 +10,7 @@ import { isAuthenticated } from "../middlewares/isAuthenticated.js";
 const router = express.Router();
 
 router.route("/post").post(isAuthenticated, singleUpload, postCategories);
-router.route("/getall").get(isAuthenticated, getAllCategories);
+router.route("/getall").get( getAllCategories);
 router.route("/delete/:id").delete(isAuthenticated, deleteCategory);
 
 export default router;
